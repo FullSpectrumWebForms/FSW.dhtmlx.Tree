@@ -22,7 +22,6 @@ namespace FSW.dhtmlx
             RegisterFiles(new[]
             {
                 "wwwroot.lib.dhtmlxTree.dhtmlxtree.js",
-                "wwwroot.lib.dhtmlxTree.ext.dhtmlxtree_json.js",
                 "wwwroot.lib.dhtmlxTree.dhtmlxtree.css",
                 "wwwroot.js.dhtmlx.controls.Tree.js",
                 "wwwroot.lib.dhtmlxTree.skins.dhtmlxtree_dhx_web.css",

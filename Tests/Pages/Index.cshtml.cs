@@ -17,6 +17,7 @@ namespace Tests.Pages
         {
             base.OnPageLoad();
 
+            TestTree.OnSelectedItemChanged += TestTree_OnSelectedItemChanged;
 
             TestTree.Items = new List<Tree.Item>()
             {
@@ -45,6 +46,10 @@ namespace Tests.Pages
                 }
             };
         }
-        
+
+        private void TestTree_OnSelectedItemChanged(Tree tree, Tree.Item item)
+        {
+            
+        }
     }
 }

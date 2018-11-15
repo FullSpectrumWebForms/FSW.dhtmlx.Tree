@@ -13,7 +13,11 @@ var controls;
                     super.initialize(type, index, id, properties);
                     this.tree = new dhtmlXTreeObject(this.id, "100%", "100%", 0);
                     this.tree.setImagesPath("/lib/dhtmlxTree/imgs/dhxtree_web/");
+                    this.tree.attachEvent("onSelect", this.onSelectedItemChanged.bind(this));
                     this.getProperty("Items").onChangedFromServer.register(this.onItemsChangedFromServer.bind(this), true);
+                }
+                onSelectedItemChanged(id) {
+                    this.customControlEvent('OnSelectedItemChangedFromClient', { id: id });
                 }
                 onItemsChangedFromServer() {
                     this.tree.parse({ id: 0, item: this.Items }, "json");

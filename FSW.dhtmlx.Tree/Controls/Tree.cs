@@ -20,9 +20,27 @@ namespace FSW.dhtmlx
             [JsonProperty(PropertyName = "text")]
             public string Text;
 
+            [JsonProperty(PropertyName = "open", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            public bool Open;
+
+            [JsonProperty(PropertyName = "im0", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            public string ImageIfNoChildren;
+
+            [JsonProperty(PropertyName = "im1", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            public string ImageIfExpanded;
+
+            [JsonProperty(PropertyName = "im2", DefaultValueHandling = DefaultValueHandling.Ignore)]
+            public string ImageIfCollapsed;
+
             [JsonProperty(PropertyName = "item")]
             public List<Item> Items;
+
+            [JsonIgnore]
+            public object Tag;
         }
+
+        public delegate void OnSelectedItemChangedHandler(Tree tree, Item item);
+        public event OnSelectedItemChangedHandler OnSelectedItemChanged;
 
         private ControlPropertyList<Item> Items_ { get; set; }
 
@@ -39,6 +57,37 @@ namespace FSW.dhtmlx
             base.InitializeProperties();
 
             Items_ = new ControlPropertyList<Item>(this, nameof(Items));
+        }
+
+        public Item GetItemById(int id)
+        {
+            foreach( var item in Items)
+            {
+                var subItem = GetItemById(id, item);
+                if (subItem != null)
+                    return subItem;
+            }
+            return null;
+        }
+        private Item GetItemById(int id, Item start)
+        {
+            if (start.Id == id)
+                return start;
+            if (start.Items == null)
+                return null;
+            foreach (var item in start.Items)
+            {
+                var subItem = GetItemById(id, item);
+                if (subItem != null)
+                    return subItem;
+            }
+            return null;
+        }
+
+        [Core.CoreEvent]
+        private void OnSelectedItemChangedFromClient(int id)
+        {
+            OnSelectedItemChanged?.Invoke(this, GetItemById(id));
         }
     }
 }

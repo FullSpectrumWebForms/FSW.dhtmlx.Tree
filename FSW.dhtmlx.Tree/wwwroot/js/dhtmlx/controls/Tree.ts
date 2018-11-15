@@ -22,9 +22,14 @@ namespace controls.html.dhtmlx {
             super.initialize(type, index, id, properties);
             this.tree = new dhtmlXTreeObject(this.id, "100%", "100%", 0);
             this.tree.setImagesPath("/lib/dhtmlxTree/imgs/dhxtree_web/");
+            this.tree.attachEvent("onSelect", this.onSelectedItemChanged.bind(this));
 
 
             this.getProperty<this, treeItem[]>("Items").onChangedFromServer.register(this.onItemsChangedFromServer.bind(this), true);
+        }
+
+        onSelectedItemChanged(id: number) {
+            this.customControlEvent('OnSelectedItemChangedFromClient', { id: id });
         }
 
         onItemsChangedFromServer() {
