@@ -13,10 +13,10 @@ var controls;
                     super.initialize(type, index, id, properties);
                     this.tree = new dhtmlXTreeObject(this.id, "100%", "100%", 0);
                     this.tree.setImagesPath("/lib/dhtmlxTree/imgs/dhxtree_web/");
-                    this.getProperty("Items").onChangedFromServer.register(this.onItemsChangedFromServer.bind(this));
+                    this.getProperty("Items").onChangedFromServer.register(this.onItemsChangedFromServer.bind(this), true);
                 }
                 onItemsChangedFromServer() {
-                    this.tree.parse(this.Items, "json");
+                    this.tree.parse({ id: 0, item: this.Items }, "json");
                 }
                 initializeHtmlElement() {
                     this.element = $('<div></div>');

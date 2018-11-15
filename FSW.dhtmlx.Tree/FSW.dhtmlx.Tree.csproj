@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FSW" Version="1.6.3.2" />
+    <PackageReference Include="FSW" Version="1.7.8.15" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.1.1" />

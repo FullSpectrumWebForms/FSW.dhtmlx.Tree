@@ -23,7 +23,7 @@ namespace Tests.Pages
                 new Tree.Item()
                 {
                     Id = 1,
-                    Text = "Shit",
+                    Text = "Woouhou",
                     Items = new List<Tree.Item>()
                     {
                         new Tree.Item()
@@ -34,7 +34,7 @@ namespace Tests.Pages
                         new Tree.Item()
                         {
                             Id = 3,
-                            Text = "yo y 2o"
+                            Text = "yo yo 2"
                         },
                         new Tree.Item()
                         {

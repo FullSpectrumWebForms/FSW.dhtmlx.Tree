@@ -24,11 +24,11 @@ namespace controls.html.dhtmlx {
             this.tree.setImagesPath("/lib/dhtmlxTree/imgs/dhxtree_web/");
 
 
-            this.getProperty<this, treeItem[]>("Items").onChangedFromServer.register(this.onItemsChangedFromServer.bind(this));
+            this.getProperty<this, treeItem[]>("Items").onChangedFromServer.register(this.onItemsChangedFromServer.bind(this), true);
         }
 
         onItemsChangedFromServer() {
-            this.tree.parse(this.Items, "json");
+            this.tree.parse({ id: 0, item: this.Items }, "json");
         }
 
         protected initializeHtmlElement(): void {
