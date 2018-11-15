@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <PackageId>FSW.dhtmlx.Gantt</PackageId>
-    <Version>1.0.1.2</Version>
+    <PackageId>FSW.dhtmlx.Tree</PackageId>
+    <Version>1.0.1.1</Version>
     <Authors>Pascal Arnold</Authors>
     <Company>N/A</Company>
-    <PackageTags>FSW dhtmlx gantt</PackageTags>
-    <PackageProjectUrl>https://github.com/FullSpectrumWebForms/FSW.dhtmlx.Gantt</PackageProjectUrl>
+    <PackageTags>FSW dhtmlx Tree</PackageTags>
+    <PackageProjectUrl>https://github.com/FullSpectrumWebForms/FSW.dhtmlx.Tree</PackageProjectUrl>
   </PropertyGroup>
   
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
@@ -42,10 +42,6 @@
     <EmbeddedResource Remove="wwwroot\**\*.ts" />
   </ItemGroup>
 
-  <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\lib\dhtmlxTree\typescript\dhtmlxgantt.ts" />
-  </ItemGroup>
-  
   <ItemGroup>
     <Content Update="wwwroot\**\*.ts" Pack="false"></Content>
     <Content Update="tsconfig.json" Pack="false"></Content>

@@ -6,3 +6,4 @@
 /.vs
 /FSW.dhtmlx.Tree/bin/Debug
 /FSW.dhtmlx.Tree/obj
+/FSW.dhtmlx.Tree/node_modules/@types

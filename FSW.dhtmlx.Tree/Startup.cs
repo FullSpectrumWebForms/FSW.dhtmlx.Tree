@@ -21,9 +21,9 @@ namespace FSW.dhtmlx
         {
             RegisterFiles(new[]
             {
-                "wwwroot.lib.dhtmlxGantt.dhtmlxgantt.js",
-                "wwwroot.lib.dhtmlxGantt.dhtmlxgantt.css",
-                "wwwroot.js.dhtmlx.controls.Gantt.js",
+                "wwwroot.lib.dhtmlxTree.dhtmlxtree.js",
+                "wwwroot.lib.dhtmlxTree.skins.dhtmlxtree_dhx_web.css",
+                "wwwroot.js.dhtmlx.controls.Tree.js",
             });
             app.UseStaticFiles(new StaticFileOptions()
             {
