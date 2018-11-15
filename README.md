@@ -1,5 +1,5 @@
-# FSW.dhtmlx.Gantt
-FSW implementation of dhtmlx Gantt
+# FSW.dhtmlx.Tree
+FSW implementation of dhtmlx Tree
 
 
-For the original dhtmlx Gantt library, head [here](https://dhtmlx.com/docs/products/dhtmlxGantt/)
+For the original dhtmlx Tree library, head [here](https://dhtmlx.com/docs/products/dhtmlxTree/)
