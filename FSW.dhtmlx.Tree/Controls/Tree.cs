@@ -69,6 +69,7 @@ namespace FSW.dhtmlx
             }
             return null;
         }
+        
         private Item GetItemById(int id, Item start)
         {
             if (start.Id == id)
@@ -85,7 +86,7 @@ namespace FSW.dhtmlx
         }
 
         [Core.CoreEvent]
-        private void OnSelectedItemChangedFromClient(int id)
+        protected void OnSelectedItemChangedFromClient(int id)
         {
             OnSelectedItemChanged?.Invoke(this, GetItemById(id));
         }

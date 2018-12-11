@@ -35,7 +35,25 @@ namespace Tests.Pages
                         new Tree.Item()
                         {
                             Id = 3,
-                            Text = "yo yo 2"
+                            Text = "yo yo 2",
+                            Items = new List<Tree.Item>()
+                            {
+                                new Tree.Item()
+                                {
+                                    Id = 5,
+                                    Text = "yo yo"
+                                },
+                                new Tree.Item()
+                                {
+                                    Id = 6,
+                                    Text = "yo yo 2"
+                                },
+                                new Tree.Item()
+                                {
+                                    Id = 7,
+                                    Text = "yo yo 3"
+                                }
+                            }
                         },
                         new Tree.Item()
                         {
@@ -49,7 +67,7 @@ namespace Tests.Pages
 
         private void TestTree_OnSelectedItemChanged(Tree tree, Tree.Item item)
         {
-            
+
         }
     }
 }
