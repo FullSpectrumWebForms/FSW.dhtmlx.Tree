@@ -39,6 +39,24 @@ namespace FSW.dhtmlx
             public object Tag;
         }
 
+        public delegate void OnItemOpenedOrClosedHandler(Tree tree, Item item, bool state);
+        private event OnItemOpenedOrClosedHandler OnItemOpenedOrClosed_;
+        public event OnItemOpenedOrClosedHandler OnItemOpenedOrClosed
+        {
+            add
+            {
+                OnItemOpenedOrClosed_ += value;
+                SetProperty(nameof(OnItemOpenedOrClosed), true);
+            }
+            remove
+            {
+                OnItemOpenedOrClosed_ -= value;
+                SetProperty(nameof(OnItemOpenedOrClosed), OnItemOpenedOrClosed_.GetInvocationList().Length != 0);
+            }
+        }
+
+
+
         public delegate void OnSelectedItemChangedHandler(Tree tree, Item item);
         public event OnSelectedItemChangedHandler OnSelectedItemChanged;
 
@@ -89,6 +107,14 @@ namespace FSW.dhtmlx
         protected void OnSelectedItemChangedFromClient(int id)
         {
             OnSelectedItemChanged?.Invoke(this, GetItemById(id));
+        }
+
+        [Core.CoreEvent]
+        protected void OnItemOpenedOrClosedFromClient(int id, bool state)
+        {
+            var item = GetItemById(id);
+            item.Open = state;
+            OnItemOpenedOrClosed_?.Invoke(this, item, state);
         }
     }
 }
