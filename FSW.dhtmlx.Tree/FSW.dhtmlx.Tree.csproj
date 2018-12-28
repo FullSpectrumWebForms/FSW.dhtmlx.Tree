@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>FSW.dhtmlx.Tree</PackageId>
-    <Version>1.0.1.4</Version>
+    <Version>1.0.2.2</Version>
     <Authors>Pascal Arnold</Authors>
     <Company>N/A</Company>
     <PackageTags>FSW dhtmlx Tree</PackageTags>
