@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FSW" Version="2.0.0.1" />
-    <PackageReference Include="FSW.Semantic" Version="2.0.0.1" />
+    <PackageReference Include="FSW" Version="3.0.2.6-beta" />
+    <PackageReference Include="FSW.Semantic" Version="3.0.1.2-beta" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
